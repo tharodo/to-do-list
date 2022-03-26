@@ -82,10 +82,19 @@ form button:hover {
   padding: 1rem;
   cursor: pointer;
   font-size: 1rem;
+  transition: .4s;
 }
-
+.trash-btn:hover {
+  background: #ff6f479f;
+  transition: .4s;
+}
 .complete-btn {
   background: rgb(11, 212, 162);
+}
+
+.complete-btn:hover {
+  background: rgba(4, 211, 159, 0.564);
+  transition: .4s;
 }
 
 .todo-item {

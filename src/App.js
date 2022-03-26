@@ -19,6 +19,7 @@ function App() {
   useEffect(() => {
     getLocalTodos();
   }, [])
+  
   useEffect(() => {
     console.log("useEffect called!!!");
     filterHandler();
