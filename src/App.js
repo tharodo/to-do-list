@@ -11,6 +11,24 @@ function App() {
   //state for Todolist
   const [todos, setTodos] = useState([]);
 
+  //state for filter
+  const [status, setStatus] = useState('all')
+  const [fiteredTodos, setFilteredTodos] = useState([]);
+
+  //function filter 
+  const filterHandler = () => {
+    switch(status) {
+      case "completed":
+        setFilteredTodos(todos.filter((todo) => todo.completed === true));
+        break;
+      case "uncompleted":
+        setFilteredTodos(todos.filter((todo) => todo.completed === false));
+        break;
+      default:
+        setFilteredTodos(todos);
+        break;
+    }
+  }
   return (
     <div className="App">
       <header>
@@ -21,6 +39,7 @@ function App() {
         setTodos={setTodos}
         inputText={inputText}
         setInputText={setInputText}
+        setStatus={setStatus}
       />
       <Todolist todos={todos} setTodos={setTodos} />
     </div>
